@@ -37,6 +37,12 @@ Ensure you have the following installed:
    ```
 
    This initiates the Vite development server and opens your application in the default web browser.
+## Previews
+# 1
+<img width="931" alt="image" src="https://github.com/user-attachments/assets/e46322dc-a7e1-432c-8e68-da3e6aaa319e">
+
+# 2
+<img width="943" alt="image" src="https://github.com/user-attachments/assets/158a8f5e-f032-4528-87aa-6b74dbd79ba1">
 
 ## About the CreateArea Component
 
