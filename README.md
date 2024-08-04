@@ -1,5 +1,3 @@
-I can definitely help you with that! Here's the content for your readme.md file incorporating the information you provided:
-
 **PyjamaHR Assignment**
 
 ## Getting Started
@@ -109,8 +107,3 @@ The `CreateArea` component in this project offers a user interface for creating 
 - Applies CSS classes for styling the form and input elements:
     - Ensures that the image width is limited to 200px with auto height for maintaining aspect ratio.
 
-## Using the CreateArea Component
-
-To incorporate the `CreateArea` component into your React application, import it and render it within your desired component or page.
-
-I hope this comprehensive explanation aids you in understanding and utilizing the `CreateArea` component effectively!
