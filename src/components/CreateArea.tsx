@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { IoIosAdd, IoMdColorPalette } from 'react-icons/io';
+import { MdOutlineFileUpload, MdOutlineInvertColors } from 'react-icons/md';
+import { IoIosAdd } from 'react-icons/io';
 import { addNote, updateNote } from '../redux/notesSlice';
 import { RootState } from '../redux/store';
 import EditNoteModal from './EditNoteModal';
+import Tooltip from './Tooltip';
 import './../App.css';
 
 interface Note {
@@ -108,16 +110,18 @@ const CreateArea: React.FC = () => {
             rows={isExpanded ? 3 : 1}
           />
           {note.image && (
-            <div>
+            <div title="upload image">
               <img src={note.image} alt="Note" style={{ maxWidth: '100%', marginTop: '10px' }} />
             </div>
           )}
         </p>
         {isExpanded && (
           <>
-            <label htmlFor="imageUpload" style={{ cursor: 'pointer', marginRight: '10px' }}>
-              <IoIosAdd size={24} />
-            </label>
+            <Tooltip text="Upload Image">
+              <label htmlFor="imageUpload" style={{ cursor: 'pointer', marginRight: '10px' }}>
+                <MdOutlineFileUpload size={24} aria-label="Upload Image" />
+              </label>
+            </Tooltip>
             <input
               type="file"
               id="imageUpload"
@@ -126,9 +130,11 @@ const CreateArea: React.FC = () => {
               style={{ display: 'none' }}
               aria-label="Upload Image"
             />
-            <label htmlFor="backgroundColor" style={{ cursor: 'pointer' }}>
-              <IoMdColorPalette size={24} />
-            </label>
+            <Tooltip text="Choose Background Color">
+              <label htmlFor="backgroundColor" style={{ cursor: 'pointer' }}>
+                <MdOutlineInvertColors size={24} aria-label="Choose Background Color" />
+              </label>
+            </Tooltip>
             <input
               type="color"
               id="backgroundColor"

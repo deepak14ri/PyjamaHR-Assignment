@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IoIosAdd, IoMdColorPalette } from 'react-icons/io';
+import { MdOutlineFileUpload, MdOutlineInvertColors } from 'react-icons/md';
 
 interface EditNoteModalProps {
   isOpen: boolean;
@@ -73,7 +73,7 @@ const EditNoteModal: React.FC<EditNoteModalProps> = ({
         />
         <div>
           <label htmlFor="imageUpload" style={{ cursor: 'pointer', marginRight: '10px' }}>
-            <IoIosAdd size={24} />
+            <MdOutlineFileUpload size={24} />
           </label>
           <input
             type="file"
@@ -87,7 +87,7 @@ const EditNoteModal: React.FC<EditNoteModalProps> = ({
         </div>
         <div>
           <label htmlFor="backgroundColor" style={{ cursor: 'pointer' }}>
-            <IoMdColorPalette size={24} />
+            <MdOutlineInvertColors size={24} />
           </label>
           <input
             type="color"

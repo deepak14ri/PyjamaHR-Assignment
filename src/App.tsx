@@ -21,7 +21,7 @@ const App: React.FC = () => {
       <Count
         count={
           notes.length === 0
-            ? 'Empty'
+            ? 'Write a note'
             : `Showing ${notes.length} Notes in Database`
         }
       />

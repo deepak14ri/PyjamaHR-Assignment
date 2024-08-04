@@ -6,10 +6,12 @@
 
 html {
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 body {
   background: #ffffff;
+  overflow-x: hidden;
 }
 
 .header {
@@ -28,6 +30,7 @@ body {
   font-weight: 600;
 }
 
+/* Default styles for larger screens (laptops, desktops) */
 form {
   position: relative;
   width: 600px;
@@ -38,19 +41,12 @@ form {
   box-shadow: 0 1px 7px rgb(128, 128, 128);
 }
 
-form input {
-  width: 100%;
-  border: none;
-  padding: 4px 10px;
-  margin-bottom: 20px;
-  outline: none;
-  font-size: 1rem;
-  resize: none;
-}
+form input,
 form textarea {
   width: 100%;
   border: none;
   padding: 4px 10px;
+  margin-bottom: 20px;
   outline: none;
   font-size: 1rem;
   resize: none;
@@ -74,13 +70,35 @@ form button {
   outline: none;
 }
 
+/* Styles for smaller screens (mobile devices) */
+@media (max-width: 600px) {
+  form {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 0.9rem;
+    padding: 6px 8px;
+  }
+
+  form button {
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    bottom: -15px;
+  }
+}
+
 .note {
   background: #ffffff;
   width: 240px;
   border-radius: 7px;
   box-shadow: 0 2px 5px rgb(175, 175, 175);
   padding: 10px;
-  margin: 16px;
+  margin: 20px 60px 20px 60px;
   float: left;
   margin-right: 0;
 }
@@ -129,7 +147,7 @@ form button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #007bff;
+  background-color: rgb(255, 200, 18);
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -140,7 +158,7 @@ form button {
 }
 
 .add-note-button:hover {
-  background-color: #0056b3;
+  background-color: rgb(255, 200, 18);
 }
 
 .add-note-button:focus {
@@ -203,4 +221,31 @@ form button {
 
 .error-input {
   border-color: red;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: auto;
+  background-color: lightgray;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the element */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
